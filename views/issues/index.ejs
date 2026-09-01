@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFlow</title>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h2>CampusFlow</h2>
+        </header>
+        <div class="top-bar">
+            <h4>Campus Issues</h4>
+        </div>
+
+        <section class="issue-list">
+            <ul>
+                <% for (let issue of allIssues ) {%>
+                    <li><a href="/issues/<%= issue._id %>"><%= issue.title %></a></li>
+                <% } %>
+            </ul>
+
+        </section>
+    </main>
+</body>
+</html>

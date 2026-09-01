@@ -24,9 +24,12 @@ const issuesSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  image: {
+image: {
     filename: {
-      type: String,
+        type: String,
+    },
+    url: {
+        type: String,
     },
   },
 });
