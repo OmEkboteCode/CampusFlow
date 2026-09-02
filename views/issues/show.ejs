@@ -7,7 +7,9 @@
 </head>
 <body>
     <main class="show-container">
-        <header>Issues</header>
+        <header>
+            <h2>Issue Info</h2>
+        </header>
     </main>
     <section class="issue-info">
         <ul>
@@ -23,6 +25,12 @@
     </section>
     <footer>
         <a href="/issues/<%= issue._id %>/edit">Edit Issue</a>
+        <br><br>
+        <form method="POST" action="/issues/<%= issue._id %>?_method=DELETE">
+            <button class="delete">
+                Delete
+            </button>
+        </form>
     </footer>
 </body>
 </html>

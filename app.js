@@ -90,6 +90,16 @@ app.put("/issues/:id", async (req, res) => {
   res.redirect(`/issues/${id}`);
 });
 
+// Delete Route
+
+app.delete("/issues/:id", async (req, res) => {
+  let { id } = req.params;
+  const deletedIssue = await Issue.findByIdAndDelete(id)
+  console.log(deletedIssue)
+  res.redirect("/issues")
+
+});
+
 app.listen(3000, () => {
   console.log("Server is listening to 3000");
 });
