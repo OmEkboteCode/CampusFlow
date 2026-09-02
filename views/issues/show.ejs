@@ -9,7 +9,7 @@
     <main class="show-container">
         <header>Issues</header>
     </main>
-    <section class="issue-details">
+    <section class="issue-info">
         <ul>
             <li><%= issue.title %></li>
             <li><%= issue.description %></li>
@@ -18,6 +18,11 @@
             <li><%= issue.status %></li>
             <li><%= issue.createdAt %></li>
         </ul>
+        <br>
+        
     </section>
+    <footer>
+        <a href="/issues/<%= issue._id %>/edit">Edit Issue</a>
+    </footer>
 </body>
 </html>

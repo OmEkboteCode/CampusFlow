@@ -76,6 +76,20 @@ app.get("/issues/:id", async (req, res) => {
   res.render("issues/show.ejs", { issue });
 });
 
+// Edit Route
+
+app.get("/issues/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  const issue = await Issue.findById(id);
+  res.render("issues/edit.ejs", { issue });
+});
+
+app.put("/issues/:id", async (req, res) => {
+  let { id } = req.params;
+  await Issue.findByIdAndUpdate(id, { ...req.body.issue });
+  res.redirect(`/issues/${id}`);
+});
+
 app.listen(3000, () => {
   console.log("Server is listening to 3000");
 });
