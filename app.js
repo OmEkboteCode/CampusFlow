@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const path = require("path");
-const Issue = require("./models/issue.js")
+const Issue = require("./models/issue.js");
 const methodOverride = require("method-override");
 
 const MONGO_URL = `mongodb://127.0.0.1:27017/campusflow`;
@@ -50,8 +50,20 @@ app.get("/testissue", async (req, res) => {
 //Index Route
 
 app.get("/issues", async (req, res) => {
-    const allIssues = await Issue.find({});
+  const allIssues = await Issue.find({});
   res.render("issues/index.ejs", { allIssues });
+});
+
+// New Route
+app.get("/issues/new", (req, res) => {
+  res.render("issues/new.ejs");
+});
+
+app.post("/issues", async (req, res) => {
+  const newIssue = new Issue(req.body.issue);
+  await newIssue.save();
+  console.log(newIssue)
+  res.redirect("/issues");
 });
 
 app.listen(3000, () => {

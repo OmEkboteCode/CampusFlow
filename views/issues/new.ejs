@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFlow</title>
+</head>
+<body>
+    <main>
+        <form method="POST" action="/issues">
+            <input name="issue[title]" placeholder="Enter Title" type="text">
+            <br>
+            <textarea name="issue[description]" placeholder="Enter Description"></textarea>
+            <br>
+            <input name="issue[category]" placeholder="Enter Category" type="text">
+            <br>
+            <input name="issue[location]" placeholder="Enter Location" type="text">
+            <br>
+            <select name="issue[status]" id="status">
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+            <br>
+            <input name="issue[date]" type="datetime-local">
+            <br>
+            <button>Add</button>
+        </form>
+    </main>
+</body>
+</html>
