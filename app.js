@@ -59,11 +59,21 @@ app.get("/issues/new", (req, res) => {
   res.render("issues/new.ejs");
 });
 
+// Create Route
+
 app.post("/issues", async (req, res) => {
   const newIssue = new Issue(req.body.issue);
   await newIssue.save();
-  console.log(newIssue)
+  console.log(newIssue);
   res.redirect("/issues");
+});
+
+// Show Route
+
+app.get("/issues/:id", async (req, res) => {
+  let { id } = req.params;
+  const issue = await Issue.findById(id);
+  res.render("issues/show.ejs", { issue });
 });
 
 app.listen(3000, () => {
