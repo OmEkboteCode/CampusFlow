@@ -56,3 +56,35 @@ body{
 .container {
     flex: 1;
 }
+
+
+/* Card */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-title a {
+    color: #212529;
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: #0d6efd;
+    /* text-decoration: underline; */
+}
+
+.card-subtitle {
+    text-transform: capitalize;
+}
+
+.card-link {
+    text-decoration: none;
+}

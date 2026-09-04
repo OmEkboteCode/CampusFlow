@@ -1,24 +1,47 @@
 <% layout("/layouts/boilerplate") %>
-    <main class="container">
-        <!-- <header>
-            <h2>CampusFlow</h2>
-        </header> -->
-        <div class="top-bar">
-            <h4>Campus Issues</h4>
-            <!-- <form method="GET" action="/issues/new">
-                <button>
-                    New
-                </button>
-            </form> -->
 
-        </div>
+<main class="container py-4">
 
-        <section class="issue-list">
-            <ul>
-                <% for (let issue of allIssues ) {%>
-                    <li><a href="/issues/<%= issue._id %>"><%= issue.title %></a></li>
-                <% } %>
-            </ul>
+    <h4 class="mb-4">Campus Issues</h4>
 
-        </section>
-    </main>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        <% for (let issue of allIssues) { %>
+
+            <div class="col">
+
+                <div class="card">
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            <a href="/issues/<%= issue._id %>">
+                                <%= issue.title %>
+                            </a>
+                        </h5>
+
+                        <h6 class="card-subtitle mb-2 text-body-secondary">
+                            <%= issue.category %>
+                        </h6>
+
+                        <p class="card-text">
+                            <%= issue.description %>
+                        </p>
+
+                        <a href="/issues/<%= issue._id %>" class="card-link">
+                            Details
+                        </a>
+
+                        <a href="/issues/<%= issue._id %>/edit" class="card-link">
+                            Edit
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        <% } %>
+
+    </div>
+
+</main>
