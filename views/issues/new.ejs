@@ -1,32 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusFlow</title>
-</head>
-<body>
-    <main>
-        <h2>Create New Issue</h2>
-        <form method="POST" action="/issues">
-            <input name="issue[title]" placeholder="Enter Title" type="text">
-            <br>
-            <textarea name="issue[description]" placeholder="Enter Description"></textarea>
-            <br>
-            <input name="issue[category]" placeholder="Enter Category" type="text">
-            <br>
-            <input name="issue[location]" placeholder="Enter Location" type="text">
-            <br>
-            <select name="issue[status]" id="status">
-                <option value="Open">Open</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Resolved">Resolved</option>
-            </select>
-            <br>
-            <input name="issue[date]" type="datetime-local">
-            <br>
-            <button>Create</button>
-        </form>
-    </main>
-</body>
-</html>
+<%- layout("/layouts/boilerplate") %>
+
+<main class="container py-4">
+
+    <div class="row">
+        <div class="col-8 offset-2">
+
+            <h2 class="mb-4">Create New Issue</h2>
+
+            <form method="POST" action="/issues">
+
+                <!-- Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input
+                        id="title"
+                        name="issue[title]"
+                        placeholder="Enter Title"
+                        type="text"
+                        class="form-control"
+                    >
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea
+                        id="description"
+                        name="issue[description]"
+                        placeholder="Enter Description"
+                        class="form-control"
+                        rows="4"
+                    ></textarea>
+                </div>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input
+                        id="category"
+                        name="issue[category]"
+                        placeholder="Enter Category"
+                        type="text"
+                        class="form-control"
+                    >
+                </div>
+
+                <!-- Location -->
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input
+                        id="location"
+                        name="issue[location]"
+                        placeholder="Enter Location"
+                        type="text"
+                        class="form-control"
+                    >
+                </div>
+
+                <!-- Status -->
+                <div class="mb-3">
+                    <label for="status" class="form-label">Status</label>
+                    <select
+                        name="issue[status]"
+                        id="status"
+                        class="form-select"
+                    >
+                        <option value="Open">Open</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                    </select>
+                </div>
+
+                <!-- Date -->
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input
+                        id="date"
+                        name="issue[date]"
+                        type="datetime-local"
+                        class="form-control"
+                    >
+                </div>
+
+                <!-- Create button -->
+                <button type="submit" class="btn btn-primary">
+                    Create Issue
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</main>
