@@ -1,5 +1,8 @@
 body{
     font-family: "PT Sans", sans-serif !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar{
@@ -49,11 +52,10 @@ body{
     background-color: #f5f5f5;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: space-evenly;
     flex-direction: column;
 }
 
-.container {
+.main {
     flex: 1;
 }
 
